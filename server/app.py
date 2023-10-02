@@ -111,13 +111,6 @@ class pizza_id(Resource):
 api.add_resource(pizza_id,"/pizza/<int:id>")
 
 
-        
-      
-
-         
-    
-
-
 class rp_resource(Resource):
     def get(self):
         rp = Restaurant_Pizzas.query.all()

@@ -51,7 +51,7 @@ with app.app_context():
     db.session.add(restaurant_tres)
 
     Rp_uno=Restaurant_Pizzas(
-        price=1000,
+        price=23,
         pizza=pizza_uno,
         restaurant=restaurant_uno
 
@@ -59,14 +59,14 @@ with app.app_context():
     db.session.add(Rp_uno)
 
     RP_dos=Restaurant_Pizzas(
-        price=670,
+        price=17,
         pizza=pizza_dos,
         restaurant=restaurant_dos
     )
     db.session.add(RP_dos)
 
     RP_tres=Restaurant_Pizzas(
-        price=780,
+        price=28,
         pizza=pizza_tres,
         restaurant=restaurant_tres
     )
