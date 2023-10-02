@@ -1,3 +1,6 @@
+# Author David kimemia Thuku
+
+
 # Flask Code Challenge - Pizza Restaurants
 This is a Flask API code challenge that involves working with a Pizza Restaurant domain. my  
 task is to build a Flask API with the specified functionality. Below, you'll find details about the models, validations, routes, and how to test the endpoints.
@@ -129,3 +132,25 @@ To test your endpoints, you can follow these steps:
 
 Run the Flask server.
 Use a tool like Postman to make requests to the defined endpoints.
+# MIT License
+
+# Copyright (c) [2023] [David Kimemia Thuku]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
