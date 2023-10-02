@@ -6,127 +6,80 @@ from faker import Faker
 from app import app
 
 
-
-pizzas =[
-      "Margherita",
-    "Pepperoni Passion",
-    "Hawaiian Delight",
-    "Veggie Supreme",
-    "BBQ Chicken",
-    "Meat Lovers",
-    "Buffalo Ranch",
-    "Mediterranean Magic",
-    "Pesto Perfection",
-    "Four Cheese",
-    "Spinach and Feta",
-    "Taco Fiesta",
-    "Mushroom Madness",
-    "White Garlic",
-    "Sausage Sensation",
-    "Garden Fresh",
-    "Bacon Bliss",
-    "Supreme Sizzler",
-    "Caprese Classic",
-    "The Works"
-
-]
-
-
-restaurants = [
-    "Tony's Pizzeria",
-    "Mama Mia Trattoria",
-    "The Cheesecake Factory",
-    "Ristorante Italiano",
-    "Sushi Samba",
-    "Cafe Parisienne",
-    "The Burger Joint",
-    "Taco Fiesta",
-    "La Taqueria",
-    "Szechuan Palace",
-    "Thai Orchid",
-    "Casa de Tapas",
-    "The Steakhouse Grill",
-    "Vegetarian Delight",
-    "Seafood Shack",
-    "Mediterranean Breeze",
-    "Pasta Paradise",
-    "Samosa Street",
-    "BBQ King",
-    "The Veggie Patch"
-]
-
-
-pizza_ingredients = [
-    "Dough",
-    "Tomato Sauce",
-    "Mozzarella Cheese",
-    "Pepperoni",
-    "Mushrooms",
-    "Green Bell Peppers",
-    "Onions",
-    "Black Olives",
-    "Sausage",
-    "Bacon",
-    "Ham",
-    "Pineapple",
-    "Jalapenos",
-    "Anchovies",
-    "Garlic",
-    "Oregano",
-    "Basil",
-    "Red Pepper Flakes",
-    "Parmesan Cheese",
-    "Olive Oil",
-]
-
-list_address=[
-     "P.O. Box 1234",
-    "P.O. Box 5678",
-    "P.O. Box 7890",
-    "P.O. Box 2468",
-    "P.O. Box 1357",
-    "P.O. Box 8642",
-    "P.O. Box 9876",
-    "P.O. Box 5432",
-    "P.O. Box 1010",
-    "P.O. Box 2222",
-
-]
-
-
-fake =Faker()
 with app.app_context():
-    Pizzas.query.delete()
+    
     Restaurant_Pizzas.query.delete()
+    Pizzas.query.delete()
     Restaurants.query.delete()
 
 
-    my_pizzas =[]
-    for i in range(50):
-        p =Pizzas(name=rc(pizzas),ingredients=rc(pizza_ingredients))
-        my_pizzas.append(p)
-    db.session.add_all(my_pizzas)    
+    pizza_uno =Pizzas(
+        name="Dimino's",
+        ingredients="wheat,cheese,onions")
+    db.session.add(pizza_uno)
 
+    pizza_dos=Pizzas(
+        name ="Pepperoni Passion",
+        ingredients="Dough,Tomato Sauce,Mozzarella Cheese,Pepperoni")
+    db.session.add(pizza_dos)
 
-    my_restaurants=[]
-    for i in range(50):
-        r =Restaurants(
-            name =rc(restaurants),
-            address=rc(list_address)
-        )
-        my_restaurants.append(r)
-    db.session.add_all(my_restaurants)
+    pizza_tres=Pizzas(
+        name="Veggie Supreme",
+        ingredients="Green Bell Peppers,Onions,Black Olives,Sausage"
+    )
+    db.session.add(pizza_tres)
 
-    my_restaurants_pizzas=[]
-    for u in my_pizzas:
-        for i in range(randint(1,10)):
-            x=Restaurant_Pizzas(
-               
-                 price =randint(1,1000),
-                 restaurant=rc(my_restaurants),
-                 pizza =u)
-            my_restaurants_pizzas.append(x)
+    restaurant_uno=Restaurants(
+        name="Tony's Pizzeria",
+        address="P.O. Box 1234",
 
-    db.session.add_all(my_restaurants_pizzas)
+    )
+    db.session.add(restaurant_uno)
+    restaurant_dos=Restaurants(
+        name="Ristorante Italiano",
+        address= "P.O. Box 5678",
+
+    )
+    db.session.add(restaurant_dos)
+
+    restaurant_tres=Restaurants(
+        name="Taco Fiesta",
+        address ="P.O. Box 2222"
+
+    )
+
+    db.session.add(restaurant_tres)
+
+    Rp_uno=Restaurant_Pizzas(
+        price=1000,
+        pizza=pizza_uno,
+        restaurant=restaurant_uno
+
+    )
+    db.session.add(Rp_uno)
+
+    RP_dos=Restaurant_Pizzas(
+        price=670,
+        pizza=pizza_dos,
+        restaurant=restaurant_dos
+    )
+    db.session.add(RP_dos)
+
+    RP_tres=Restaurant_Pizzas(
+        price=780,
+        pizza=pizza_tres,
+        restaurant=restaurant_tres
+    )
+
+    db.session.add(RP_tres)
     db.session.commit()
+
+
+
+
+
+
+
+
+   
         

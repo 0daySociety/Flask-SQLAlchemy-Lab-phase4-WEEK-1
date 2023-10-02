@@ -1,8 +1,8 @@
-"""Created new tables
+"""fixed serlization
 
-Revision ID: 5d0c38fd0b9e
+Revision ID: 6c3f2746c946
 Revises: 
-Create Date: 2023-09-29 09:00:37.159458
+Create Date: 2023-10-01 22:13:38.386801
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5d0c38fd0b9e'
+revision = '6c3f2746c946'
 down_revision = None
 branch_labels = None
 depends_on = None
