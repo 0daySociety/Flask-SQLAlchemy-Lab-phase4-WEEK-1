@@ -1,18 +1,18 @@
 from models import db,Restaurant_Pizzas,Restaurants,Pizzas
 from random import randint, choice as rc
 
-from faker import Faker
+
 
 from app import app
 
 
 with app.app_context():
-    
+    # clearing the database for seeding to take place 
     Restaurant_Pizzas.query.delete()
     Pizzas.query.delete()
     Restaurants.query.delete()
 
-
+# creating instance of the classes in models.py so a to add data using the orm convention
     pizza_uno =Pizzas(
         name="Dimino's",
         ingredients="wheat,cheese,onions")
@@ -72,6 +72,7 @@ with app.app_context():
     )
 
     db.session.add(RP_tres)
+    # adding the transactions to the database 
     db.session.commit()
 
 
